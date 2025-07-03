@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+  <id>cronlock-remover</id>
+  <name>Module cronlock-remover</name>
+  <description>This module removes root.crontab.lock</description>
+  <version>1.0</version>
+  <release>1</release>
+  <vendor>Cats &amp; Pipes</vendor>
+  <url>https://github.com/cats-and-pipes</url>
+  <plesk_min_version>18.0.70</plesk_min_version>
+</module>

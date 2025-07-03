@@ -1,0 +1,25 @@
+<?php
+pm_Context::init('my-cronlock-remover');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $file = '/usr/local/psa/var/root.crontab.lock';
+    if (file_exists($file)) {
+        if (unlink($file)) {
+            $message = "{$file} removed successfully.";
+        } else {
+            $message = "error removing {$file}!";
+        }
+    } else {
+        $message = "{$file} does not exists!";
+    }
+}
+
+?>
+<h2>Cronlock Remover</h2>
+<?php if (!empty($message)): ?>
+    <p><strong><?php echo htmlspecialchars($message); ?></strong></p>
+<?php endif; ?>
+
+<form method="post">
+    <button type="submit">delete Lock-File</button>
+</form>
